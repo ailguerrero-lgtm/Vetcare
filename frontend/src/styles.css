@@ -1,0 +1,167 @@
+/* Importar tema base de Angular Material */
+@import "@angular/material/prebuilt-themes/indigo-pink.css";
+
+/* Variables de Diseño (Light Mode por defecto) */
+:root {
+  --primary-color: #0f3d72;
+  --primary-hover: #1457a8;
+  --secondary-color: #18b8a3;
+  --accent-color: #1b8fb7;
+  --bg-gradient-start: #eaf6ff;
+  --bg-gradient-end: #e9fbf7;
+  --card-bg: #ffffff;
+  --text-primary: #1e293b;
+  --text-secondary: #64748b;
+  --sidebar-bg: #0f3d72;
+  --sidebar-text: #ffffff;
+  --border-color: #d7e2ea;
+  --card-shadow: 0 18px 45px rgba(15, 23, 42, 0.14);
+  --app-font-size: 16px;
+}
+
+/* Variables de Diseño (Dark Mode) */
+.dark-theme {
+  --primary-color: #2dd4bf; /* Teal brillante */
+  --primary-hover: #14b8a6;
+  --secondary-color: #34d399;
+  --accent-color: #22d3ee;
+  --bg-gradient-start: #0f172a; /* Slate 900 */
+  --bg-gradient-end: #1e293b;   /* Slate 800 */
+  --card-bg: rgba(30, 41, 59, 0.8);
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --sidebar-bg: #0f172a;
+  --sidebar-text: #f8fafc;
+  --border-color: #334155;
+  --card-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -4px rgba(0, 0, 0, 0.5);
+}
+
+/* Estilos Globales */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif !important;
+  font-size: var(--app-font-size) !important;
+  background: #ffffff;
+  background-attachment: fixed;
+  color: var(--text-primary);
+  min-height: 100vh;
+  overflow-x: hidden;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Scrollbar personalizado */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-hover);
+}
+
+/* Transiciones globales para tamaño de letra */
+body, p, span, h1, h2, h3, h4, h5, h6, .mat-mdc-card, .mat-mdc-list-item, .mat-mdc-button {
+  transition: font-size 0.2s ease;
+}
+
+/* Estilo Glassmorphism para Tarjetas y Contenedores */
+.glass-panel {
+  background: var(--card-bg) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  box-shadow: var(--card-shadow);
+  color: var(--text-primary) !important;
+}
+
+/* Estilos de botones primarios */
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%) !important;
+  color: #ffffff !important;
+  border: none !important;
+  box-shadow: 0 10px 22px rgba(15, 61, 114, 0.22) !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+.btn-primary:hover {
+  background: linear-gradient(135deg, var(--primary-hover) 0%, var(--secondary-color) 100%) !important;
+  transform: translateY(-1px);
+}
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+/* Clases de utilidad para centrado y diseño flexible */
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.mt-4 {
+  margin-top: 16px;
+}
+
+.mb-4 {
+  margin-bottom: 16px;
+}
+
+/* Sobrescribir estilos por defecto de Material para adaptarlos a temas */
+.mat-mdc-card {
+  background-color: var(--card-bg) !important;
+  color: var(--text-primary) !important;
+  box-shadow: var(--card-shadow) !important;
+  border-radius: 20px !important;
+  border: 1px solid var(--border-color) !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+.mat-mdc-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 20px -3px rgba(0, 0, 0, 0.15), 0 4px 6px -4px rgba(0, 0, 0, 0.15) !important;
+}
+
+.dark-theme .mat-mdc-card:hover {
+  box-shadow: 0 12px 20px -3px rgba(0, 0, 0, 0.6), 0 4px 6px -4px rgba(0, 0, 0, 0.6) !important;
+}
+
+.mat-mdc-dialog-container .mdc-dialog__surface {
+  background-color: var(--card-bg) !important;
+  color: var(--text-primary) !important;
+  border-radius: 20px !important;
+  box-shadow: var(--card-shadow) !important;
+}
+
+.mat-mdc-form-field {
+  width: 100%;
+}

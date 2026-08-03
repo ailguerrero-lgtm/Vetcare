@@ -1,0 +1,36 @@
+CREATE TABLE IF NOT EXISTS usuarios (
+  id SERIAL PRIMARY KEY,
+  nombre VARCHAR(120) NOT NULL,
+  email VARCHAR(160) UNIQUE NOT NULL,
+  password VARCHAR(255) NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS mascotas (
+  id SERIAL PRIMARY KEY,
+  nombre VARCHAR(120) NOT NULL,
+  especie VARCHAR(80),
+  raza VARCHAR(120),
+  edad VARCHAR(20),
+  nombre_propietario VARCHAR(160) NOT NULL,
+  numero_identificacion_propietario VARCHAR(80) NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS propietarios (
+  id SERIAL PRIMARY KEY,
+  nombre VARCHAR(160) NOT NULL,
+  telefono VARCHAR(80) NOT NULL,
+  direccion VARCHAR(255) NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS vacunas_citas (
+  id SERIAL PRIMARY KEY,
+  nombre_mascota VARCHAR(120) NOT NULL,
+  nombre_propietario VARCHAR(160) NOT NULL,
+  numero_identificacion_propietario VARCHAR(80) NOT NULL,
+  vacuna_ocita VARCHAR(160) NOT NULL,
+  fecha VARCHAR(30) NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

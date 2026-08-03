@@ -1,0 +1,17 @@
+import 'package:flutter/material.dart';
+
+class ThemeProvider extends ChangeNotifier {
+  bool _isDarkMode = false;
+
+  bool get isDarkMode => _isDarkMode;
+
+  ThemeMode get themeMode => _isDarkMode ? ThemeMode.dark : ThemeMode.light;
+
+  void toggleTheme(bool isOn) {
+    _isDarkMode = isOn;
+    notifyListeners(); // 🔄 Notifica a toda la app que el tema cambió
+  }
+
+  // Puedes agregar más configuraciones aquí (como tamaño de letra u otros)
+}
+
