@@ -173,11 +173,6 @@ export class VerMascotasDialogComponent {
           <mat-icon>list</mat-icon>
           Ver mascotas
         </button>
-        
-        <button mat-raised-button color="accent" class="btn-primary" (click)="agregarMascotaDialog()">
-          <mat-icon>add</mat-icon>
-          Añadir
-        </button>
       </div>
 
       <!-- Listado Principal (Simulado en tiempo real) -->
